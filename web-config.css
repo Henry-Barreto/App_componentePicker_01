@@ -1,0 +1,83 @@
+/* iPhone 14 Screen Size Configuration: 430 x 932 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  padding: 10px;
+}
+
+#root {
+  width: 430px;
+  height: 932px;
+  max-width: 100%;
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 12px solid #000;
+  position: relative;
+}
+
+/* Notch do iPhone 14 */
+#root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 28px;
+  background: #000;
+  border-radius: 0 0 30px 30px;
+  z-index: 1000;
+}
+
+/* Área de conteúdo */
+#root > * {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar customizada */
+#root > *::-webkit-scrollbar {
+  width: 4px;
+}
+
+#root > *::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#root > *::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+#root > *::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Botão de Home (opcional) */
+#root::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+}
